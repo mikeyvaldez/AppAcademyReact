@@ -23,7 +23,7 @@ const Main = () => {
 
     return () => {
       console.log(`UseEffect cleanup ran.\nsetInterval number ${count} is being cleared out`)
-      clearInterval(myInterval)
+      // clearInterval(myInterval)
     }
 
   }, [count])
