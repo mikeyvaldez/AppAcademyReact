@@ -1,11 +1,12 @@
-import { useState } from 'react';
 import { textInputValidators } from '../utils/validations';
+import { useTextInput } from '../hooks/textInput';
 
 const Form = () => {
-  const [name, setName] = useState('');
-  const validatorResults = textInputValidators.map((validator) => validator(name));
-  const failedValidators = validatorResults.filter((validationObj) => !validationObj.pass);
-  const nameErrors = failedValidators.map((validationObj) => validationObj.msg);
+
+  const [name, setName, nameErrors] = useTextInput({
+    validations: textInputValidators
+  });
+
 
   return (
     <>
